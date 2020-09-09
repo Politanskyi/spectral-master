@@ -1,0 +1,60 @@
+.header {
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: rem(52);
+  display: flex;
+  background-color: transparent;
+
+  &__nav {
+    position: absolute;
+    height: inherit;
+    top: 0;
+    right: 0;
+    padding: 0 rem(20);
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: inherit;
+
+
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    height: inherit;
+
+    a {
+      display: flex;
+      align-items: center;
+      height: inherit;
+      text-decoration: none;
+      cursor: pointer;
+
+      span {
+        font-size: rem(14);
+        color: $main-text-color;
+        text-transform: uppercase;
+        letter-spacing: $text-letter-spacing;
+        font-weight: inherit;
+
+        + i {
+          margin-left: rem(10);
+        }
+      }
+
+      i {
+        font-size: rem(18);
+        color: $main-text-color;
+
+        + span {
+          margin-left: rem(10);
+        }
+      }
+    }
+  }
+}

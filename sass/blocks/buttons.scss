@@ -1,0 +1,32 @@
+.button {
+  display: inline-block;
+  padding: rem(10) rem(45);
+  line-height: rem(20);
+  letter-spacing: $text-letter-spacing;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: $main-text-color;
+  border: none;
+  outline: none;
+  border-radius: rem(3);
+  font-weight: 600;
+  font-size: rem(14);
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    outline: none;
+  }
+
+  &--red {
+    background-color: $button-red;
+  }
+
+  &--transparent {
+    background-color: transparent;
+    border: 2px solid $main-text-color;
+  }
+}

@@ -1,0 +1,260 @@
+.top-section {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-bottom: 970 / 1920 * 100%;
+  text-align: center;
+
+  &__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__title {
+    display: inline-block;
+    position: relative;
+    font-size: rem(30);
+    line-height: rem(30);
+    letter-spacing: rem(5);
+    color: $main-text-color;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: rem(30) rem(45);
+    margin-bottom: rem(20);
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #fff;
+
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #fff;
+
+    }
+  }
+
+  &__text {
+    width: 100%;
+    letter-spacing: $text-letter-spacing;
+    line-height: rem(25);
+    text-transform: uppercase;
+    color: $main-text-color;
+    font-weight: inherit;
+    margin: 0 0 rem(30) 0;
+
+    a {
+      text-decoration: none;
+      color: $main-text-color;
+      border-bottom: dotted 1px;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: rem(50);
+    left: 0;
+    right: 0;
+
+    span {
+      font-size: rem(12);
+      display: block;
+      margin-bottom: rem(15);
+      text-transform: uppercase;
+      letter-spacing: $text-letter-spacing;
+    }
+
+    i {
+      color: $main-text-color;
+      font-size: rem(25);
+    }
+  }
+}
+
+.diamond-section {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+
+  &--green {
+    background-color: #20b3a6;
+  }
+
+  &--padding {
+    padding: rem(96) 0;
+  }
+}
+
+.rubin {
+  position: relative;
+
+  &--center {
+    text-align: center;
+  }
+
+  &__square {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #1c9d91;
+    width: rem(57);
+    height: rem(57);
+    transform: rotate(45deg);
+    margin-right: rem(55);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--green {
+      i {
+        color: #00fecc;
+      }
+    }
+
+    &--blue {
+      i {
+        color: #01f0ff;
+      }
+    }
+
+    i {
+      transform: rotate(-45deg);
+      font-size: rem(30);
+    }
+  }
+}
+
+.card-section {
+  @extend .diamond-section;
+}
+
+.card {
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #2b343d;
+  }
+
+  &__item {
+    $card-img-color: #242b33;
+    $card-img-opacity: 0;
+    $card-img-qty: 3;
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    @for $i from 0 to $card-img-qty {
+      $card-img-opacity: ($i+1)/$card-img-qty;
+      &:nth-child(#{$i+1}) {
+        background-color: rgba($card-img-color, $card-img-opacity);
+      }
+    }
+
+    &:nth-child(even){
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__img {
+    width: 40%;
+    height: 100%;
+    max-height: rem(530);
+    overflow: hidden;
+    font-size: 0;
+    background-color: white;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__body {
+    width: 60%;
+  }
+
+  &__text {
+    max-width: rem(768);
+    padding: rem(50) rem(80);
+  }
+}
+
+.card-icon-section {
+  @extend .diamond-section;
+
+  &--purple {
+    background-color: #505393;
+  }
+
+  &--padding {
+    @extend .diamond-section--padding;
+  }
+}
+
+.card-icon {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    $card-icon-color: #3f4173;
+    $card-icon-opacity: 0;
+    $card-icon-qty: 6;
+    display: inline-flex;
+    max-width: 50%;
+    padding: rem(80) rem(120) rem(80) rem(120);
+
+    @for $i from 0 to $card-icon-qty {
+      $card-icon-opacity: ($i+1)/$card-icon-qty;
+      &:nth-child(#{$i+1}) {
+        background-color: rgba($card-icon-color, $card-icon-opacity);
+      }
+    }
+
+    i {
+      font-size: rem(30);
+      margin-right: rem(20);
+      color: #00fecc;
+    }
+  }
+
+  &__text-block {
+    display: block;
+    margin-top: rem(5);
+  }
+
+  &__title {
+    display: block;
+    font-size: rem(20);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: rem(3.5);
+    margin-bottom: rem(30);
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: rem(16);
+    letter-spacing: rem(1.2);
+    margin-bottom: rem(20);
+  }
+}
+
