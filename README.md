@@ -1,9 +1,5 @@
 # Spectral
 
-***https://html5up.net/spectral***
-
-### Делаем пока без JS, только разметка стили и анимация + адаптация
-
 ### Developing
 
 1. Run `npm install` to install server dependencies.
