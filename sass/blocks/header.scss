@@ -2,7 +2,7 @@
   position: fixed;
   z-index: 3;
   width: 100%;
-  height: rem(52);
+  height: rem(62);
   display: flex;
   background-color: transparent;
 
@@ -11,7 +11,7 @@
     height: inherit;
     top: 0;
     right: 0;
-    padding: 0 rem(20);
+    padding: 0 rem(7) 0 rem(15);
   }
 
   ul {
@@ -36,14 +36,14 @@
       cursor: pointer;
 
       span {
-        font-size: rem(14);
+        font-size: rem(16);
         color: $main-text-color;
         text-transform: uppercase;
         letter-spacing: $text-letter-spacing;
         font-weight: inherit;
 
         + i {
-          margin-left: rem(10);
+          margin-left: rem(18);
         }
       }
 
