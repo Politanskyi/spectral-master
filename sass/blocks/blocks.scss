@@ -9,7 +9,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-47.5%, -58%);
+    transform: translate(-50%, -53%);
   }
 
   &__title {
@@ -48,6 +48,7 @@
   }
 
   &__text {
+    display: block;
     width: 100%;
     letter-spacing: rem(4.5);
     line-height: rem(33);
@@ -66,16 +67,16 @@
 
   &__scroll {
     position: absolute;
-    bottom: rem(58);
-    left: 0;
-    right: 0;
+    bottom: rem(23);
+    left: 50%;
+    transform: translate(-54%, -50%);
 
     span {
       font-size: rem(16);
       display: block;
       margin-bottom: rem(21);
       text-transform: uppercase;
-      letter-spacing: $text-letter-spacing;
+      letter-spacing: rem(3.6);
     }
 
     i {
@@ -104,6 +105,7 @@
 
   &__wrapper {
     text-align: center;
+    padding-top: rem(18);
     padding-bottom: rem(60);
 
     ul  {
@@ -117,11 +119,11 @@
     align-items: center;
     border: 2px solid #1c9d91;
     border-radius: rem(3);
-    width: rem(82);
-    height: rem(82);
+    width: rem(40);
+    height: rem(40);
     transform: rotate(45deg);
     margin-right: rem(70);
-    padding:  20px 0;
+    padding:  40px 40px;
 
     &:last-child {
       margin-right: 0;
@@ -166,6 +168,7 @@
     display: flex;
     align-items: center;
     width: 100%;
+    min-height: rem(543);
 
     @for $i from 0 to $card-img-qty {
       $card-img-opacity: ($i+1)/$card-img-qty;
@@ -176,16 +179,20 @@
 
     &:nth-child(even) {
       flex-direction: row-reverse;
+
+      .card__text {
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
 
   &__img {
-    width: 40%;
+    width: 39.9%;
     height: 100%;
-    max-height: rem(530);
+    min-height: rem(543);
     overflow: hidden;
     font-size: 0;
-    background-color: white;
 
     img {
       width: 100%;
@@ -195,12 +202,12 @@
   }
 
   &__body {
-    width: 60%;
+    width: 60.1%;
   }
 
   &__text {
     max-width: rem(768);
-    padding: rem(50) rem(80);
+    padding: rem(105) rem(16) rem(2) rem(80.5);
   }
 }
 
@@ -220,15 +227,17 @@
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: rem(39);
   }
 
   &__item {
     $card-icon-color: #3f4173;
     $card-icon-opacity: 0;
     $card-icon-qty: 6;
+
     display: inline-flex;
     max-width: 50%;
-    padding: rem(80) rem(120) rem(80) rem(120);
+    padding: rem(82) rem(80) rem(80) rem(50);
 
     @for $i from 0 to $card-icon-qty {
       $card-icon-opacity: ($i+1)/$card-icon-qty;
@@ -238,9 +247,25 @@
     }
 
     i {
-      font-size: rem(30);
-      margin-right: rem(20);
+      font-size: rem(35);
+      margin-right: rem(35);
       color: #00fecc;
+    }
+
+    &:first-child {
+      border-top-left-radius: 3px;
+    }
+
+    &:nth-child(2) {
+      border-top-right-radius: 3px;
+    }
+
+    &:nth-last-child(2) {
+      border-bottom-left-radius: 3px;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 3px;
     }
   }
 
@@ -251,18 +276,19 @@
 
   &__title {
     display: block;
-    font-size: rem(20);
+    font-size: rem(23);
     text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: rem(3.5);
+    font-weight: 800;
+    letter-spacing: rem(5.175);
     margin-bottom: rem(30);
   }
 
   &__text {
     font-weight: 300;
-    font-size: rem(16);
+    font-size: rem(20);
+    line-height: rem(33);
     letter-spacing: rem(1.2);
-    margin-bottom: rem(20);
+    margin-bottom: rem(40);
   }
 }
 
@@ -270,7 +296,7 @@
   @extend .diamond-section;
 
   &--padding {
-    @extend .diamond-section--padding;
+    padding: rem(70) 0 rem(52) 0;
   }
 }
 
@@ -292,20 +318,13 @@
 
   &__text {
     max-width: rem(720);
-    padding: rem(50) rem(50) rem(50) rem(20);
+    padding: rem(50) rem(50) rem(2) rem(1);
   }
 
   &__buttons {
     display: flex;
     width: 30%;
     flex-direction: column;
-
-    .button {
-      &:last-child {
-        margin-top: rem(20);
-      }
-
-    }
   }
 }
 

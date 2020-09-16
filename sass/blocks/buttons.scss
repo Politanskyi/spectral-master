@@ -1,7 +1,8 @@
 .button {
   display: inline-block;
-  padding: rem(14) rem(42.5);
-  letter-spacing: rem(8);
+  padding: 0 rem(42);
+  line-height: rem(46);
+  letter-spacing: rem(3.6);
   text-transform: uppercase;
   background-color: transparent;
   color: $main-text-color;
@@ -23,10 +24,12 @@
   &--red {
     background-color: $button-red;
     border: 2px solid $button-red;
+    margin-bottom: rem(30);
   }
 
   &--transparent {
     background-color: transparent;
     border: 2px solid $main-text-color;
+    margin-bottom: rem(30);
   }
 }

@@ -7,13 +7,13 @@
     align-items: center;
     flex-direction: column;
     background-color: rgba(29, 36, 42, 0.9);
-    padding:  rem(96) rem(20) rem(20) rem(20);
+    padding:  rem(124) rem(20) rem(20) rem(20);
   }
 
   &__social {
     display: flex;
     list-style: none;
-    margin-bottom:  rem(32);
+    margin-bottom:  rem(60);
     color: #909294;
 
     li {
@@ -24,7 +24,7 @@
       }
 
       i {
-        font-size: rem(23);
+        font-size: rem(26);
       }
     }
   }
@@ -41,8 +41,8 @@
       margin-bottom:  rem(32);
       padding-left: rem(16);
       line-height: rem(16);
-      font-size: rem(13);
-      letter-spacing: $text-letter-spacing;
+      font-size: rem(16);
+      letter-spacing: rem(3.6);
 
       &:first-child {
         border-left: none;

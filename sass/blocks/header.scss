@@ -11,7 +11,7 @@
     height: inherit;
     top: 0;
     right: 0;
-    padding: 0 rem(7) 0 rem(15);
+    padding: 0  rem(14);
   }
 
   ul {
@@ -39,7 +39,7 @@
         font-size: rem(16);
         color: $main-text-color;
         text-transform: uppercase;
-        letter-spacing: $text-letter-spacing;
+        letter-spacing: rem(3.6);
         font-weight: inherit;
 
         + i {
