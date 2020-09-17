@@ -1,66 +1,50 @@
 .title {
-  position: relative;
+  display: inline-block;
+  font-size: rem(27);
+  font-weight: 800;
+  line-height: rem(47.25);
+  letter-spacing: rem(6.099);
+  color: $main-text-color;
+  text-transform: uppercase;
+  padding-bottom: rem(26);
 
   &--center {
     text-align: center;
   }
 
-  &__text {
-    display: inline-block;
-    font-size: rem(27);
-    font-weight: 800;
-    line-height: rem(47.25);
-    letter-spacing: rem(6);
-    color: $main-text-color;
-    text-transform: uppercase;
-    padding-bottom: rem(26);
+  &--padding-lg {
+    padding-bottom: rem(22);
+  }
 
-    &--padding-active {
-      padding-bottom: rem(21);
+  &--line {
+    &::after {
+      display: block;
+      margin-top: rem(28);
+      content: '';
+      width: 100%;
+      height: 2px;
+      background-color: #1c9d91;
     }
+  }
 
-    &--line {
-      &::after {
-        display: block;
-        margin-top: rem(28);
-        content: '';
-        width: 100%;
-        height: 2px;
-        background-color: #1c9d91;
-      }
-    }
+  &--purple-line {
+    @extend .title--line;
 
-    &--purple-line {
-      @extend .title__text--line;
-
-      &::after {
-        background-color: #464981;
-      }
+    &::after {
+      background-color: #464981;
     }
   }
 }
 
 .simple-text {
   position: relative;
-
-  &--center {
-    text-align: center;
-  }
-
-  &__text {
-    display: block;
-    font-size: rem(20);
-    line-height: rem(34);
-    letter-spacing: rem(1.85);
-    color: $main-text-color;
-    margin-bottom: rem(70);
+  display: block;
+  font-size: rem(20);
+  line-height: rem(34);
+  letter-spacing: rem(1.5);
+  color: $main-text-color;
 
     &--light {
       font-weight: 300;
     }
-
-    &--regular {
-      font-weight: 400;
-    }
-  }
 }

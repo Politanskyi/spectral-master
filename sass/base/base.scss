@@ -2,12 +2,16 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
-  font-size: rem(16);
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   color: $main-text-color;
   outline: none;
+  background-color: #29313a;
 }
 
 ul {

@@ -1,5 +1,7 @@
 .footer {
-  @extend .diamond-section;
+  position: relative;
+  z-index: 2;
+  width: 100%;
 
   &__wrapper {
     display: flex;
@@ -7,13 +9,13 @@
     align-items: center;
     flex-direction: column;
     background-color: rgba(29, 36, 42, 0.9);
-    padding:  rem(124) rem(20) rem(20) rem(20);
+    padding:  rem(123) rem(20) rem(52) rem(20);
   }
 
   &__social {
     display: flex;
     list-style: none;
-    margin-bottom:  rem(60);
+    margin-bottom:  rem(61);
     color: #909294;
 
     li {
@@ -38,7 +40,6 @@
     li {
       border-left: solid 1px rgba(255, 255, 255, 0.5);
       margin-left: rem(16);
-      margin-bottom:  rem(32);
       padding-left: rem(16);
       line-height: rem(16);
       font-size: rem(16);
