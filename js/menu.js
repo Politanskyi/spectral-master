@@ -1,6 +1,7 @@
 let html = document.documentElement;
 let body = document.body;
 let bgMask = document.createElement('div');
+let allSubMenu = document.querySelectorAll('.menu .sub-menu');
 let openMenu = document.querySelector('.open-menu');
 let closeMenu = document.querySelector('.close-menu');
 
@@ -47,3 +48,23 @@ function outsideMenu (e) {
         },500);
     }
 }
+
+allSubMenu.forEach(function (item){
+    let parentSubMenu = item.closest('li');
+    parentSubMenu.addEventListener('click', openSubMenu);
+    parentSubMenu.addEventListener('dblclick', closeSubMenu);
+
+    function openSubMenu(e){
+        if(!item.classList.contains('show')){
+            item.classList.add('show');
+            e.preventDefault();
+            return false;
+        }
+    }
+
+    function closeSubMenu(e){
+        if(item.classList.contains('show')){
+            console.log('dbclick');
+        }
+    }
+})

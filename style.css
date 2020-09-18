@@ -466,44 +466,6 @@ a {
           .header__nav li a i + span {
             margin-left: 0.625rem; }
 
-.close-menu {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  top: 10px;
-  right: 10px;
-  width: 1.625rem;
-  height: 1.625rem;
-  padding: 0.3125rem; }
-  .close-menu i {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    font-size: 1.625rem;
-    color: #fff; }
-
-.arrow {
-  border: 1px solid transparent;
-  background-color: transparent;
-  cursor: pointer; }
-  .arrow i {
-    font-size: 1.25rem;
-    color: #fff;
-    padding: 0.3125rem; }
-
 .menu {
   position: fixed;
   z-index: 4;
@@ -521,17 +483,28 @@ a {
     -webkit-transform: translateX(0);
             transform: translateX(0); }
   .menu ul {
+    width: 100%;
     list-style: none; }
     .menu ul li {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      -webkit-transition: color 0.2s, border-bottom-color 0.2s;
+      transition: color 0.2s, border-bottom-color 0.2s;
       margin-bottom: 0.5rem;
       padding-bottom: 0.5rem; }
+      .menu ul li:hover {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6); }
+        .menu ul li:hover > a {
+          margin-left: 0.625rem; }
+          .menu ul li:hover > a:not(:only-child) {
+            width: calc(80% - 10px); }
       .menu ul li:last-child {
         border-bottom: 1px solid transparent; }
       .menu ul li a {
@@ -541,6 +514,19 @@ a {
         display: flex;
         line-height: 2.125rem;
         letter-spacing: 0.09375rem; }
+        .menu ul li a:not(:only-child) {
+          width: 80%; }
+        .menu ul li a ~ .arrow {
+          width: 20%; }
+
+.sub-menu {
+  display: none;
+  margin-left: 0.9375rem;
+  padding: 0.9375rem 0;
+  -webkit-transition: .2s;
+  transition: .2s; }
+  .sub-menu.show {
+    display: block; }
 
 .footer {
   position: relative;
@@ -864,28 +850,68 @@ a {
   line-height: 2.875rem;
   letter-spacing: 0.225rem;
   text-transform: uppercase;
-  background-color: rgba(237, 73, 51, 0.3);
+  background-color: rgba(237, 73, 51, 0.4);
   color: #fff;
   border: 2px solid #999;
   outline: none;
   border-radius: 0.1875rem;
   font-weight: 600;
   font-size: 1rem;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s; }
   .button:focus {
     outline: none; }
   .button:active {
     outline: none; }
   .button:hover {
-    background-color: rgba(144, 144, 144, 0.25); }
+    background-color: rgba(144, 144, 144, 0.4); }
   .button--red {
     background-color: #ed4933;
     border: 2px solid #ed4933; }
     .button--red:hover {
-      background-color: rgba(144, 144, 144, 0.25); }
+      background-color: rgba(236, 66, 66, 0.4); }
   .button--transparent {
     background-color: transparent;
     border: 2px solid #fff; }
+
+.close-menu {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 10px;
+  right: 10px;
+  width: 1.625rem;
+  height: 1.625rem;
+  padding: 0.3125rem; }
+  .close-menu i {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 1.625rem;
+    color: #fff; }
+
+.arrow {
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: pointer; }
+  .arrow i {
+    font-size: 1.25rem;
+    color: #fff;
+    padding: 0.3125rem; }
 
 .title {
   display: inline-block;
