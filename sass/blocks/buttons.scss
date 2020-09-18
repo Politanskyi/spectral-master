@@ -4,9 +4,9 @@
   line-height: rem(46);
   letter-spacing: rem(3.6);
   text-transform: uppercase;
-  background-color: transparent;
+  background-color: rgba(237, 73, 51, 0.3);
   color: $main-text-color;
-  border: none;
+  border: 2px solid #999;
   outline: none;
   border-radius: rem(3);
   font-weight: 600;
@@ -21,9 +21,17 @@
     outline: none;
   }
 
+  &:hover {
+    background-color: rgba(144, 144, 144, 0.25);
+  }
+
   &--red {
     background-color: $button-red;
     border: 2px solid $button-red;
+
+    &:hover {
+      background-color: rgba(144, 144, 144, 0.25);
+    }
   }
 
   &--transparent {

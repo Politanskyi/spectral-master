@@ -1,0 +1,9 @@
+.dotted-link {
+  border-bottom: 1px dotted;
+  transition: color 0.2s, border-bottom-color 0.2s;
+
+  &:hover {
+    color: #fff;
+    border-bottom-color: transparent;
+  }
+}

@@ -1,9 +1,9 @@
 .header {
   position: fixed;
   top: 0;
+  right: var(--margin-fixed);
   left: 0;
   z-index: 3;
-  width: 100%;
   height: rem(62);
   display: flex;
   background-color: transparent;
@@ -14,47 +14,45 @@
     top: 0;
     right: 0;
     padding: 0  rem(14);
-  }
 
-  ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    height: inherit;
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      height: inherit;
+    }
 
-
-  }
-
-  li {
-    display: flex;
-    align-items: center;
-    height: inherit;
-
-    a {
+    li {
       display: flex;
       align-items: center;
       height: inherit;
-      text-decoration: none;
-      cursor: pointer;
 
-      span {
-        font-size: rem(16);
-        color: $main-text-color;
-        text-transform: uppercase;
-        letter-spacing: rem(3.6);
-        font-weight: inherit;
+      a {
+        display: flex;
+        align-items: center;
+        height: inherit;
+        text-decoration: none;
+        cursor: pointer;
 
-        + i {
-          margin-left: rem(18);
+        span {
+          font-size: rem(16);
+          color: $main-text-color;
+          text-transform: uppercase;
+          letter-spacing: rem(3.6);
+          font-weight: inherit;
+
+          + i {
+            margin-left: rem(18);
+          }
         }
-      }
 
-      i {
-        font-size: rem(18);
-        color: $main-text-color;
+        i {
+          font-size: rem(18);
+          color: $main-text-color;
 
-        + span {
-          margin-left: rem(10);
+          + span {
+            margin-left: rem(10);
+          }
         }
       }
     }

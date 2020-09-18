@@ -1,9 +1,17 @@
+:root {
+  --margin-fixed: 0;
+}
+
 * {
   box-sizing: border-box;
 }
 
 html {
   font-size: 16px;
+
+  &.is-show {
+    overflow: hidden;
+  }
 }
 
 body {
@@ -12,6 +20,8 @@ body {
   color: $main-text-color;
   outline: none;
   background-color: #29313a;
+
+
 }
 
 ul {
@@ -21,4 +31,10 @@ ul {
 
 *:before, *:after {
   box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: $main-text-color;
+  transition: .2s;
 }

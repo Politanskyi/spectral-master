@@ -16,17 +16,42 @@
     display: flex;
     list-style: none;
     margin-bottom:  rem(61);
-    color: #909294;
 
     li {
-      margin-right:  rem(35);
+      margin-right:  rem(30);
 
       &:last-child {
         margin-right: 0;
       }
 
-      i {
-        font-size: rem(26);
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #909294;
+        text-decoration: none;
+        width: rem(26);
+        height: rem(26);
+        transition: .2s;
+        padding: rem(5);
+
+        &:active,
+        &:focus {
+          color: #909294;
+        }
+
+        &:hover {
+          color: #fff;
+        }
+
+        i {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-width: rem(26);
+          height: 100%;
+          font-size: rem(26);
+        }
       }
     }
   }

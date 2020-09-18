@@ -3,7 +3,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  right: 0;
+  right: var(--margin-fixed);
   bottom: 0;
   filter: brightness(50%);
   background-image: url("./images/banner.jpg");
@@ -12,3 +12,25 @@
   max-width: 1920px;
   margin: 0 auto;
 }
+
+.bg-mask {
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &.index {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+

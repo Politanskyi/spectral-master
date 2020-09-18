@@ -62,12 +62,6 @@
     font-weight: inherit;
     font-size: rem(20);
     margin: 0 0 rem(40) 0;
-
-    a {
-      text-decoration: none;
-      color: $main-text-color;
-      border-bottom: dotted 1px;
-    }
   }
 
   &__scroll {
