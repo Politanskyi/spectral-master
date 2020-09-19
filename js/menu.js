@@ -64,7 +64,9 @@ allSubMenu.forEach(function (item){
 
     function closeSubMenu(e){
         if(item.classList.contains('show')){
-            console.log('dbclick');
+            item.classList.remove('show');
+            e.preventDefault();
+            return false;
         }
     }
 })

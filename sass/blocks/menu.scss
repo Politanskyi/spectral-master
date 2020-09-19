@@ -23,13 +23,11 @@
       flex-wrap: wrap;
       align-items: center;
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-      transition: color 0.2s, border-bottom-color 0.2s;
+      transition: .2s;
       margin-bottom: rem(8);
       padding-bottom: rem(8);
 
       &:hover {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-
         & > a {
           margin-left: rem(10);
 
@@ -62,12 +60,16 @@
 }
 
 .sub-menu {
-  display: none;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
   margin-left: rem(15);
-  padding: rem(15) 0;
-  transition: .2s;
+  transition: .5s ease;
 
-  &.show{
-    display: block;
+  &.show {
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+    padding: rem(15) 0;
   }
 }
