@@ -4,6 +4,7 @@ let bgMask = document.createElement('div');
 let parentMenu = document.querySelector('.menu');
 let openMenu = document.querySelector('.open-menu');
 let closeMenu = document.querySelector('.close-menu');
+let timer = null;
 
 body.addEventListener('click', outsideMenu);
 openMenu.addEventListener('click', openMenuFunc);
@@ -51,51 +52,40 @@ function outsideMenu(e) {
 
 parentMenu.addEventListener('click', function (e) {
     let target = e.target;
-    let parentLink = target.closest('li').querySelector('a');
     let subMenu = target.closest('li').querySelector('.sub-menu');
-    let subBtn = target.closest('li').querySelector('.arrow');
+    let link = target.closest('li').querySelector('a');
+    let arrow = target.closest('li').querySelector('.arrow');
 
-    if (parentLink && !subMenu.classList.contains('show')) {
-        subMenu.classList.add('show');
-        subBtn.classList.add('show');
-        e.preventDefault();
-        return false;
+    if (timer) {
+        clearTimeout(timer);
     }
 
-        // subMenu.classList.toggle('show');
-        // subBtn.classList.toggle('show');
+    if (!target.closest('.sub-menu')) {
+        e.preventDefault();
+    }
 
-    console.log(1);
+    if (subMenu && !subMenu.classList.contains('show') && !arrow) {
+        arrow.classList.add('show');
+        subMenu.classList.add('show');
+    } else if (arrow) {
+        arrow.classList.toggle('show');
+        subMenu.classList.toggle('show');
+    } else {
+        timer = setTimeout(function () {
+            subMenu.classList.remove('show');
+            document.location.href = link.getAttribute('href');
+        }, 250)
+    }
 })
+;
 
 parentMenu.addEventListener('dblclick', function (e) {
     let target = e.target;
     let subMenu = target.closest('li').querySelector('.sub-menu');
-    let subBtn = target.closest('li').querySelector('.arrow');
+    let arrow = target.closest('li').querySelector('.arrow');
 
-    if (subMenu.classList.contains('show')) {
-        subMenu.classList.remove('show');
-        subBtn.classList.remove('show');
-    }
-    console.log(2);
-})
-
-// $('.menu').dblclick(function (e) {
-//     let target = e.target;
-//     let subMenu = target.closest('li').querySelector('.sub-menu');
-//
-//     if (subMenu.classList.contains('show')) {
-//         subMenu.classList.remove('show');
-//     }
-//     console.log(2);
-// }).click(function (e) {
-//     let target = e.target;
-//     let subMenu = target.closest('li').querySelector('.sub-menu');
-//
-//     if (!subMenu.classList.contains('show')) {
-//         subMenu.classList.add('show');
-//         e.preventDefault();
-//         return false;
-//     }
-//     console.log(1);
-// })
+    e.preventDefault();
+    clearTimeout(timer);
+    arrow.classList.remove('show');
+    subMenu.classList.remove('show');
+});
