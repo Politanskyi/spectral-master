@@ -12,13 +12,13 @@ closeMenu.addEventListener('click', closeMenuFunc);
 bgMask.classList.add('bg-mask');
 body.prepend(bgMask);
 
-function getScrollbarWidth () {
+function getScrollbarWidth() {
     return window.innerWidth - document.documentElement.clientWidth;
 }
 
 let scrollBarWidth = getScrollbarWidth();
 
-function openMenuFunc (e) {
+function openMenuFunc(e) {
     e.stopPropagation();
     html.style = `margin-right:${scrollBarWidth}px; --margin-fixed: ${scrollBarWidth}px`;
     html.classList.toggle('is-show');
@@ -26,7 +26,7 @@ function openMenuFunc (e) {
     bgMask.classList.toggle('index');
 }
 
-function closeMenuFunc (e) {
+function closeMenuFunc(e) {
     e.stopPropagation();
     html.removeAttribute('style');
     html.classList.toggle('is-show');
@@ -34,10 +34,10 @@ function closeMenuFunc (e) {
 
     setTimeout(function () {
         bgMask.classList.toggle('index');
-    },500);
+    }, 500);
 }
 
-function outsideMenu (e) {
+function outsideMenu(e) {
     if (!e.target.closest('.menu')) {
         html.removeAttribute('style');
         html.classList.remove('is-show');
@@ -45,28 +45,32 @@ function outsideMenu (e) {
 
         setTimeout(function () {
             bgMask.classList.remove('index');
-        },500);
+        }, 500);
     }
 }
 
-allSubMenu.forEach(function (item){
-    let parentSubMenu = item.closest('li');
-    parentSubMenu.addEventListener('click', openSubMenu);
-    parentSubMenu.addEventListener('dblclick', closeSubMenu);
-
-    function openSubMenu(e){
-        if(!item.classList.contains('show')){
-            item.classList.add('show');
-            e.preventDefault();
-            return false;
-        }
-    }
-
-    function closeSubMenu(e){
-        if(item.classList.contains('show')){
-            item.classList.remove('show');
-            e.preventDefault();
-            return false;
-        }
-    }
+allSubMenu.forEach(function (item) {
+    let parentItem = item.closest('li');
+    let linkItem = parentItem.querySelector('a');
+    let subItem = item;
+    linkItem.addEventListener('click', function (e) {
+        openSubMenu(e, subItem);
+    });
+    linkItem.addEventListener('dblclick', function (e) {
+        closeSubMenu(e, subItem);
+    });
 })
+
+function openSubMenu(e, subItem) {
+    if (!subItem.classList.contains('show')) {
+        subItem.classList.add('show');
+        e.preventDefault();
+        return false;
+    }
+}
+
+function closeSubMenu(e, subItem) {
+    if (subItem.classList.contains('show')) {
+        subItem.classList.remove('show');
+    }
+}
