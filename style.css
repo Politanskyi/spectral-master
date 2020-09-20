@@ -913,7 +913,14 @@ a {
   .arrow i {
     font-size: 1.25rem;
     color: #fff;
-    padding: 0.3125rem; }
+    padding: 0.3125rem;
+    -webkit-transition: .2s;
+    transition: .2s;
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0); }
+  .arrow.show i {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg); }
 
 .title {
   display: inline-block;

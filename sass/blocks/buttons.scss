@@ -70,5 +70,13 @@
     font-size: rem(20);
     color: $main-text-color;
     padding: rem(5);
+    transition: .2s;
+    transform: rotateX(0)
+  }
+
+  &.show {
+    i {
+      transform: rotateX(180deg);
+    }
   }
 }

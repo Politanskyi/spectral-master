@@ -1,7 +1,7 @@
 let html = document.documentElement;
 let body = document.body;
 let bgMask = document.createElement('div');
-let allSubMenu = document.querySelectorAll('.menu .sub-menu');
+let parentMenu = document.querySelector('.menu');
 let openMenu = document.querySelector('.open-menu');
 let closeMenu = document.querySelector('.close-menu');
 
@@ -49,28 +49,53 @@ function outsideMenu(e) {
     }
 }
 
-allSubMenu.forEach(function (item) {
-    let parentItem = item.closest('li');
-    let linkItem = parentItem.querySelector('a');
-    let subItem = item;
-    linkItem.addEventListener('click', function (e) {
-        openSubMenu(e, subItem);
-    });
-    linkItem.addEventListener('dblclick', function (e) {
-        closeSubMenu(e, subItem);
-    });
-})
+parentMenu.addEventListener('click', function (e) {
+    let target = e.target;
+    let parentLink = target.closest('li').querySelector('a');
+    let subMenu = target.closest('li').querySelector('.sub-menu');
+    let subBtn = target.closest('li').querySelector('.arrow');
 
-function openSubMenu(e, subItem) {
-    if (!subItem.classList.contains('show')) {
-        subItem.classList.add('show');
+    if (parentLink && !subMenu.classList.contains('show')) {
+        subMenu.classList.add('show');
+        subBtn.classList.add('show');
         e.preventDefault();
         return false;
     }
-}
 
-function closeSubMenu(e, subItem) {
-    if (subItem.classList.contains('show')) {
-        subItem.classList.remove('show');
+        // subMenu.classList.toggle('show');
+        // subBtn.classList.toggle('show');
+
+    console.log(1);
+})
+
+parentMenu.addEventListener('dblclick', function (e) {
+    let target = e.target;
+    let subMenu = target.closest('li').querySelector('.sub-menu');
+    let subBtn = target.closest('li').querySelector('.arrow');
+
+    if (subMenu.classList.contains('show')) {
+        subMenu.classList.remove('show');
+        subBtn.classList.remove('show');
     }
-}
+    console.log(2);
+})
+
+// $('.menu').dblclick(function (e) {
+//     let target = e.target;
+//     let subMenu = target.closest('li').querySelector('.sub-menu');
+//
+//     if (subMenu.classList.contains('show')) {
+//         subMenu.classList.remove('show');
+//     }
+//     console.log(2);
+// }).click(function (e) {
+//     let target = e.target;
+//     let subMenu = target.closest('li').querySelector('.sub-menu');
+//
+//     if (!subMenu.classList.contains('show')) {
+//         subMenu.classList.add('show');
+//         e.preventDefault();
+//         return false;
+//     }
+//     console.log(1);
+// })
