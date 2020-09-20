@@ -14,7 +14,7 @@ bgMask.classList.add('bg-mask');
 body.prepend(bgMask);
 
 function getScrollbarWidth() {
-    return window.innerWidth - document.documentElement.clientWidth;
+    return window.innerWidth - html.clientWidth;
 }
 
 let scrollBarWidth = getScrollbarWidth();
@@ -55,6 +55,7 @@ parentMenu.addEventListener('click', function (e) {
     let subMenu = target.closest('li').querySelector('.sub-menu');
     let link = target.closest('li').querySelector('a');
     let arrow = target.closest('li').querySelector('.arrow');
+    let checkArrow = target.closest('.arrow');
 
     if (timer) {
         clearTimeout(timer);
@@ -64,15 +65,14 @@ parentMenu.addEventListener('click', function (e) {
         e.preventDefault();
     }
 
-    if (subMenu && !subMenu.classList.contains('show') && !arrow) {
+    if (subMenu && !subMenu.classList.contains('show') && !checkArrow) {
         arrow.classList.add('show');
         subMenu.classList.add('show');
-    } else if (arrow) {
+    } else if (checkArrow) {
         arrow.classList.toggle('show');
         subMenu.classList.toggle('show');
     } else {
         timer = setTimeout(function () {
-            subMenu.classList.remove('show');
             document.location.href = link.getAttribute('href');
         }, 250)
     }

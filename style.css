@@ -522,10 +522,11 @@ a {
   opacity: 0;
   visibility: hidden;
   margin-left: 0.9375rem;
+  overflow: hidden;
   -webkit-transition: .5s ease;
   transition: .5s ease; }
   .sub-menu.show {
-    height: 100%;
+    height: auto;
     opacity: 1;
     visibility: visible;
     padding: 0.9375rem 0; }
