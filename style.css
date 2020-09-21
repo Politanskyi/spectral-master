@@ -638,7 +638,9 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: transparent; }
+  background-color: transparent;
+  -webkit-transition: .3s ease;
+  transition: .3s ease; }
   .header__nav {
     position: absolute;
     height: inherit;
@@ -685,6 +687,8 @@ a {
           color: #fff; }
           .header__nav li a i + span {
             margin-left: 0.625rem; }
+  .header.active {
+    background-color: #2b343d; }
 
 @media (min-width: 375px) {
   .header__nav {

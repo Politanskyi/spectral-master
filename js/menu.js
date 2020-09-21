@@ -1,5 +1,6 @@
 let html = document.documentElement;
 let body = document.body;
+let header = document.querySelector('.header');
 let bgMask = document.createElement('div');
 let parentMenu = document.querySelector('.menu');
 let openMenu = document.querySelector('.open-menu');
@@ -10,16 +11,24 @@ body.addEventListener('click', outsideMenu);
 openMenu.addEventListener('click', openMenuFunc);
 closeMenu.addEventListener('click', closeMenuFunc);
 
+window.addEventListener('scroll', function () {
+    if (window.scrollY > 200) {
+        header.classList.add('active');
+    } else {
+        header.classList.remove('active');
+    }
+})
+
 bgMask.classList.add('bg-mask');
 body.prepend(bgMask);
 
-function getScrollbarWidth() {
+function getScrollbarWidth () {
     return window.innerWidth - html.clientWidth;
 }
 
 let scrollBarWidth = getScrollbarWidth();
 
-function openMenuFunc(e) {
+function openMenuFunc (e) {
     e.stopPropagation();
     html.style = `margin-right:${scrollBarWidth}px; --margin-fixed: ${scrollBarWidth}px`;
     html.classList.toggle('is-show');
@@ -27,7 +36,7 @@ function openMenuFunc(e) {
     bgMask.classList.toggle('index');
 }
 
-function closeMenuFunc(e) {
+function closeMenuFunc (e) {
     e.stopPropagation();
     html.removeAttribute('style');
     html.classList.toggle('is-show');
@@ -38,7 +47,7 @@ function closeMenuFunc(e) {
     }, 500);
 }
 
-function outsideMenu(e) {
+function outsideMenu (e) {
     if (!e.target.closest('.menu')) {
         html.removeAttribute('style');
         html.classList.remove('is-show');
