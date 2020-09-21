@@ -73,7 +73,7 @@ parentMenu.addEventListener('click', function (e) {
         subMenu.classList.toggle('show');
     } else {
         timer = setTimeout(function () {
-            document.location.href = link.getAttribute('href');
+            document.location.href = link.href;
         }, 250)
     }
 })

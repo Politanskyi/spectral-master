@@ -1,0 +1,60 @@
+@media (min-width: $esm) {
+  .rubin {
+    &__square {
+
+    }
+  }
+}
+.rubin {
+  position: relative;
+
+  &__wrapper {
+    text-align: center;
+    padding-top: rem(18);
+    padding-bottom: rem(60);
+
+    ul  {
+      list-style: none;
+    }
+  }
+
+  &__square {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #1c9d91;
+    border-radius: rem(3);
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+    margin-right: rem(70);
+    padding: 30px 30px;
+
+    @media (min-width: $lg) {
+      width: 40px;
+      height: 40px;
+      padding: 40px 40px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--green {
+      i {
+        color: #00fecc;
+      }
+    }
+
+    &--blue {
+      i {
+        color: #01f0ff;
+      }
+    }
+
+    i {
+      transform: rotate(-45deg);
+      font-size: rem(42);
+    }
+  }
+}

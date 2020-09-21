@@ -1,0 +1,74 @@
+.action {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
+
+  @media (min-width: $lg) {
+    max-width: rem(900);
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0;
+
+    @media (min-width: $lg) {
+      margin-left: rem(-50);
+    }
+  }
+
+  &__col {
+    padding-left: 0;
+    padding-bottom: rem(30);
+    width: 100%;
+
+    & .title {
+      display: block;
+      text-align: center;
+    }
+
+    & .simple-text {
+      display: block;
+      text-align: center;
+    }
+
+    @media (min-width: $lg) {
+      padding-left: rem(50);
+      padding-bottom: 0;
+      width: 50%;
+
+      & .title {
+        display: inline-block;
+        text-align: left;
+      }
+
+      & .simple-text {
+        display: inline-block;
+        text-align: left;
+      }
+    }
+
+    @media screen and (min-width: $xl) {
+      width: 66.5%;
+
+      &:last-child {
+        width: 33.5%;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+
+    .button {
+      margin-bottom: rem(30);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -46,6 +46,8 @@
         display: flex;
         line-height: rem(34);
         letter-spacing: rem(1.5);
+        font-size: rem(16);
+        text-transform: uppercase;
 
         &:not(:only-child) {
           width: 80%;

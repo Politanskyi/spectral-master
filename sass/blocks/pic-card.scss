@@ -6,7 +6,13 @@
   display: flex;
   align-items: center;
   width: 100%;
-  min-height: rem(543);
+  flex-direction: column;
+  min-height: auto;
+
+  @media (min-width: $lg) {
+    flex-direction: row;
+    min-height: rem(543);
+  }
 
   @for $i from 0 to $card-img-qty {
     $card-img-opacity: ($i+1)/$card-img-qty;
@@ -16,20 +22,38 @@
   }
 
   &:nth-child(even) {
-    flex-direction: row-reverse;
+    flex-direction: column;
+
+    @media (min-width: $lg) {
+      flex-direction: row-reverse;
+    }
 
     .card-pic__text {
       margin-left: auto;
-      padding-left: rem(40);
+      padding-left: 15px;
+
+      @media (min-width: $lg) {
+        padding-left: rem(40);
+      }
     }
   }
 
   &__img {
-    width: 39.9%;
+    width: 100%;
     height: 100%;
-    min-height: rem(543);
+    min-height: auto;
     overflow: hidden;
     font-size: 0;
+
+    @media (min-width: $sm) {
+      max-height: 300px;
+    }
+
+    @media (min-width: $lg) {
+      width: 39.9%;
+      height: 100%;
+      min-height: rem(543);
+    }
 
     img {
       width: 100%;
@@ -39,11 +63,22 @@
   }
 
   &__body {
-    width: 60.1%;
+    width: 100%;
+
+    @media (min-width: $lg) {
+      width: 60.1%;
+    }
   }
 
   &__text {
-    max-width: rem(920);
-    padding: rem(105) rem(16) rem(106) rem(80.5);
+    max-width: 100%;
+    padding: 30px 15px;
+    text-align: center;
+
+    @media (min-width: $lg) {
+      text-align: left;
+      max-width: rem(920);
+      padding: rem(105) rem(16) rem(106) rem(80.5);
+    }
   }
 }

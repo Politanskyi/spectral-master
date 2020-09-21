@@ -4,7 +4,7 @@
   right: var(--margin-fixed);
   left: 0;
   z-index: 3;
-  height: rem(62);
+  height: 62px;
   display: flex;
   background-color: transparent;
 
@@ -13,7 +13,7 @@
     height: inherit;
     top: 0;
     right: 0;
-    padding: 0  rem(14);
+    padding: 0 14px;
 
     ul {
       display: flex;
@@ -35,7 +35,7 @@
         cursor: pointer;
 
         span {
-          font-size: rem(16);
+          font-size: 16px;
           color: $main-text-color;
           text-transform: uppercase;
           letter-spacing: rem(3.6);
@@ -47,13 +47,29 @@
         }
 
         i {
-          font-size: rem(18);
+          font-size: 18px;
           color: $main-text-color;
 
           + span {
             margin-left: rem(10);
           }
         }
+      }
+    }
+  }
+}
+
+@media (min-width: $esm) {
+  .header {
+    &__nav {
+      padding: 0 12px;
+
+      span {
+        font-size: 14px;
+      }
+
+      i {
+        font-size: 16px;
       }
     }
   }
