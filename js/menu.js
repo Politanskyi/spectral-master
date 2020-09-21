@@ -1,3 +1,5 @@
+'use strict';
+
 let html = document.documentElement;
 let body = document.body;
 let header = document.querySelector('.header');
@@ -31,19 +33,19 @@ let scrollBarWidth = getScrollbarWidth();
 function openMenuFunc (e) {
     e.stopPropagation();
     html.style = `margin-right:${scrollBarWidth}px; --margin-fixed: ${scrollBarWidth}px`;
-    html.classList.toggle('is-show');
-    bgMask.classList.toggle('show');
-    bgMask.classList.toggle('index');
+    html.classList.add('is-show');
+    bgMask.classList.add('show');
+    bgMask.classList.add('index');
 }
 
 function closeMenuFunc (e) {
     e.stopPropagation();
     html.removeAttribute('style');
-    html.classList.toggle('is-show');
-    bgMask.classList.toggle('show');
+    html.classList.remove('is-show');
+    bgMask.classList.remove('show');
 
     setTimeout(function () {
-        bgMask.classList.toggle('index');
+        bgMask.classList.remove('index');
     }, 500);
 }
 
@@ -89,12 +91,13 @@ parentMenu.addEventListener('click', function (e) {
 ;
 
 parentMenu.addEventListener('dblclick', function (e) {
+    e.preventDefault();
+    clearTimeout(timer);
+
     let target = e.target;
     let subMenu = target.closest('li').querySelector('.sub-menu');
     let arrow = target.closest('li').querySelector('.arrow');
 
-    e.preventDefault();
-    clearTimeout(timer);
     arrow.classList.remove('show');
     subMenu.classList.remove('show');
 });
