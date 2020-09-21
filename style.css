@@ -418,7 +418,8 @@ a {
   text-decoration: none;
   color: #fff;
   -webkit-transition: .2s;
-  transition: .2s; }
+  transition: .2s;
+  cursor: pointer; }
 
 .page {
   position: relative;
@@ -698,7 +699,7 @@ a {
   z-index: 4;
   top: 0;
   right: 0;
-  width: 18.75rem;
+  width: 300px;
   height: 100vh;
   background-color: #20b3a6;
   padding: 3.25rem 2.125rem;
